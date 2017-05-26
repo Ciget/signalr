@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    here is my chat:<br/>
+    <ul id="statuses">
+        
+    </ul>
+    <script type="text/javascript">
+        var connection = $.hubConnection("/signalr", { useDefaultPath: false });
+        connection.client.addNewActivity = function (title) {
+            $('#statuses').append('<li>' + title + '<li>');
+        };
+    </script>
+</div>
