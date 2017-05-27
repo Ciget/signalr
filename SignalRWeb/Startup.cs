@@ -1,4 +1,6 @@
-﻿using Microsoft.Owin;
+﻿using System.Configuration;
+using Microsoft.AspNet.SignalR;
+using Microsoft.Owin;
 using Owin;
 using SignalRWeb;
 
@@ -9,10 +11,10 @@ namespace SignalRWeb
     {
         public void Configuration(IAppBuilder app)
         {
-            // var connectionStr = ConfigurationManager.ConnectionStrings["signalr"].ConnectionString;
-            //GlobalHost.DependencyResolver.UseSqlServer(connectionStr);
+            var connectionStr = ConfigurationManager.ConnectionStrings["signalr"].ConnectionString;
+            GlobalHost.DependencyResolver.UseSqlServer(connectionStr);
 
-            //app.MapSignalR();
+            app.MapSignalR();
         }
     }
 }
