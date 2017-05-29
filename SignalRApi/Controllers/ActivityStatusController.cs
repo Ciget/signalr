@@ -4,12 +4,16 @@ using Common;
 
 namespace SignalRApi.Controllers
 {
-    public class NotificationController : ApiController
+    public class ActivityStatusController : ApiController
     {
         public IHttpActionResult Post()
         {
+            ActivityStatusManager manager = new ActivityStatusManager();
+            var newItems = manager.AddItems();
+
             var hub = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
-            hub.Clients.All.notify();
+            hub.Clients.All.statusUpdate(newItems);
+
             return Ok();
         }
     }

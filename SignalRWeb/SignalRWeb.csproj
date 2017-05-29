@@ -130,9 +130,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityStatus.cs" />
-    <Compile Include="ActivityStatusHub.cs" />
-    <Compile Include="ActivityStatusManager.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />

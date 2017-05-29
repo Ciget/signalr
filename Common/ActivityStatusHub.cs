@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace SignalRWeb
+namespace Common
 {
     [HubName("ActivityStatus")]
     public class ActivityStatusHub : Hub
